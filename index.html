@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BioCode 菌株商品上传页面原型">
+  <title>发布菌株商品｜BioCode</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="upload">
+  <header class="site-header"><div class="header-inner"><a class="brand" href="index.html">BioCode<small>DATABASE</small></a><nav class="main-nav" aria-label="主导航"><a class="active" href="index.html" aria-current="page">商家上传</a></nav><span class="header-side">菌株商品上传原型</span></div></header>
+  <main class="page">
+    <p class="eyebrow">商家中心　/　商品管理　/　发布菌株</p>
+    <h1 class="page-title">发布菌株商品</h1>
+    <p class="lead">填写菌株身份、商品介绍与实际交付样品的信息。</p>
+    <div class="notice"><strong>网页原型</strong>：草稿只保存在当前浏览器；文件不会上传到服务器，页面也不会真正提交平台审核。</div>
+    <div class="stepbar" aria-label="填写内容"><span class="active">01　菌株身份</span><span class="active">02　商品介绍</span><span>03　样品与交付</span><span>04　资料核对</span></div>
+    <form id="strain-form" class="upload-grid">
+      <div class="upload-main">
+        <section class="card card-body"><h2 class="section-title">菌株身份</h2><div class="field-grid">
+          <div class="field"><label for="strainName">中文名称（菌株中文名） <span class="required">*</span></label><input id="strainName" name="strainName" placeholder="例：地衣芽孢杆菌" required></div>
+          <div class="field"><label for="latinName">产品名称（拉丁学名） <span class="required">*</span></label><input id="latinName" name="latinName" placeholder="例：Bacillus licheniformis" required></div>
+          <div class="field"><label for="strainId">菌株编号 / 保藏编号 <span class="required">*</span></label><input id="strainId" name="strainId" placeholder="例：CGMCC 1.807" required></div>
+          <div class="field"><label for="supplier">实际供货方 <span class="required">*</span></label><input id="supplier" name="supplier" placeholder="填写拥有供货权限的主体" required></div>
+          <div class="field full"><label for="source">菌株来源说明</label><input id="source" name="source" placeholder="例：来源机构及原始编号；请与来源文件一致"></div>
+        </div></section>
+        <section class="card card-body"><h2 class="section-title">商品介绍</h2><p class="section-sub">填写菌株资料；名称、实际使用培养基和提供形式已在相应区域填写，无需重复录入。</p><div class="field-grid">
+          <div class="field"><label for="productCode">商品货号</label><input id="productCode" name="productCode" placeholder="填写商家商品货号"></div>
+          <div class="field"><label for="typeStrain">是否模式菌株</label><select id="typeStrain" name="typeStrain"><option value="">请选择</option><option>模式菌株</option><option>非模式菌株</option><option>待核实</option></select></div>
+          <div class="field"><label for="recommendedMedium">推荐培养基</label><input id="recommendedMedium" name="recommendedMedium" placeholder="例：培养基编号及名称"></div>
+          <div class="field"><label for="depositDate">保藏时间</label><input id="depositDate" name="depositDate" type="date"><small>指保藏记录日期，不是本次样品的有效期。</small></div>
+          <div class="field"><label for="originalId">原始编号</label><input id="originalId" name="originalId" placeholder="填写菌株原始编号"></div>
+          <div class="field"><label for="otherCollectionIds">其他保藏中心编号</label><input id="otherCollectionIds" name="otherCollectionIds" placeholder="填写对应保藏编号，没有可留空"></div>
+          <div class="field"><label for="mainUse">主要用途</label><input id="mainUse" name="mainUse" placeholder="例：研究；教学"></div>
+          <div class="field"><label for="cultureTemp">培养温度</label><input id="cultureTemp" name="cultureTemp" placeholder="例：25–28℃"></div>
+          <div class="field"><label for="oxygenType">需氧类型</label><select id="oxygenType" name="oxygenType"><option value="">请选择</option><option>好氧</option><option>兼性厌氧</option><option>严格厌氧</option><option>微需氧</option><option>其他</option><option>待核实</option></select></div>
+          <div class="field"><label for="preservationMethod">保藏方法</label><input id="preservationMethod" name="preservationMethod" placeholder="例：真空冷冻干燥"></div>
+          <div class="field full"><label for="specificUse">具体用途</label><textarea id="specificUse" name="specificUse" placeholder="填写有资料支持的具体用途"></textarea></div>
+          <div class="field full"><label for="features">特征特性</label><textarea id="features" name="features" placeholder="填写经核实的形态、生理或遗传特征"></textarea><small>请以来源记录或检测资料为依据，避免将其他菌株的特性套用到本商品。</small></div>
+        </div></section>
+        <section class="card card-body"><h2 class="section-title">样品信息</h2><p class="section-sub">请按实际交付样品填写。不同交付形式或储存条件，应分开建立商品规格。</p><div class="field-grid">
+          <div class="field"><label for="format">提供形式 / 交付形式 <span class="required">*</span></label><select id="format" name="format" required><option value="">请选择</option><option>斜面菌株</option><option>冻干菌株</option><option>冷冻菌株</option><option>其他</option></select></div>
+          <div class="field"><label for="medium">实际使用培养基 <span class="required">*</span></label><input id="medium" name="medium" placeholder="例：PDA、LB、MRS" required></div>
+          <div class="field"><label for="quantity">斜面数量 / 包装规格 <span class="required">*</span></label><input id="quantity" name="quantity" placeholder="例：2 支 / 套" required></div>
+          <div class="field"><label for="storage">储存条件 <span class="required">*</span></label><select id="storage" name="storage" required><option value="">请选择实际条件</option><option>2–8℃ 冷藏</option><option>–80℃ 冷冻</option><option>其他，见说明书</option></select></div>
+          <div class="field"><label for="price">销售定价（元／所选规格） <span class="required">*</span></label><input id="price" name="price" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="例：299.00" required><small>对应上方填写的包装规格。</small></div>
+          <div class="field"><label for="leadTime">预计发货时间</label><input id="leadTime" name="leadTime" placeholder="例：确认后 3 个工作日"></div>
+        </div></section>
+        <section class="card card-body"><h2 class="section-title">资料与交付</h2><div class="field-grid">
+          <div class="field"><label for="qcFile">质检报告 / 合格证</label><div class="filebox"><input id="qcFile" type="file" accept=".pdf,.png,.jpg,.jpeg"><small class="file-note">仅显示所选文件名，演示版不会上传文件。</small></div></div>
+          <div class="field"><label for="rightsFile">来源及转供授权材料</label><div class="filebox"><input id="rightsFile" type="file" accept=".pdf,.png,.jpg,.jpeg"><small class="file-note">正式上架前由平台核验。</small></div></div>
+          <div class="field"><label for="useLimit">用途说明</label><input id="useLimit" name="useLimit" placeholder="例：仅供科研使用；按实际授权填写"></div>
+          <div class="field"><label for="delivery">运输与收货条件</label><input id="delivery" name="delivery" placeholder="例：冷链运输；到货后立即检查"></div>
+          <div class="field full"><label for="notes">培养或使用补充说明</label><textarea id="notes" name="notes" placeholder="填写经核实的培养条件、使用注意事项或技术支持方式"></textarea></div>
+        </div></section>
+        <div class="form-actions"><span id="form-feedback" class="feedback" role="status" aria-live="polite"></span><button class="button" type="button" id="save-draft">保存本地草稿</button><button class="button primary" type="submit">检查并保存</button></div>
+      </div>
+      <aside class="card card-body"><h2 class="section-title">上架核对</h2><ol class="check-list"><li>菌名、编号与来源文件一致</li><li>样品规格对应实际交付内容</li><li>培养基与储存条件按交付形式填写</li><li>质检文件与商品信息一致</li><li>确认对外销售或转供权限</li></ol><div class="aside-status">完成平台审核、询价和文件上传功能后，才能作为正式商品对外销售。</div></aside>
+    </form>
+  </main>
+  <footer class="site-footer">BioCode 菌株页面演示 · 非正式交易页面</footer>
+</body>
+</html>
